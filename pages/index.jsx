@@ -8,6 +8,7 @@ import leftHero from './../assets/leftHero.png'
 import crab from './../assets/crab.png'
 import smallEgg from './../assets/smallEgg.png'
 import cucumber from './../assets/cucumber.png'
+import roadmapline from './../assets/roadmapline.png'
 
 function importAll(r) {
   let images = {};
@@ -99,25 +100,56 @@ function Home() {
         </div>
 
         <div className={styles.cardCon}>
-          <div className={styles.card}>
+          <div className={styles.card + ' ' + styles.blue}>
             <img src={crab.src} alt="" />
             <div className={styles.text}>
               <h1>GAMERS</h1>
+              <div className={styles.underline}></div>
+
+              <div className={styles.textBlock}>
+                <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
+                <p>First ever deck-building blockchain game</p>
+                <p>Unlock secret vaults holding legendary NFTs</p>
+              </div>
+
             </div>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card + ' ' + styles.green}>
             <img src={smallEgg.src} alt="" />
             <div className={styles.text}>
               <h1>COLLECTORS</h1>
+              <div className={styles.underline}></div>
+              {
+                <div className={styles.textBlock}>
+                  <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
+                  <p>First ever deck-building blockchain game</p>
+                  <p>Unlock secret vaults holding legendary NFTs</p>
+                </div>
+              }
             </div>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card + ' ' + styles.purple}>
             <img src={cucumber.src} alt="" />
             <div className={styles.text}>
               <h1>HODLERS</h1>
+              <div className={styles.underline}></div>
+              {
+                <div className={styles.textBlock}>
+                  <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
+                  <p>First ever deck-building blockchain game</p>
+                  <p>Unlock secret vaults holding legendary NFTs</p>
+                </div>
+              }
             </div>
           </div>
         </div>
+      </section>
+      <section className={styles.sec5}>
+        <div className={styles.titleCon}>
+          <p className={styles.subTitle}>OUR</p>
+          <h1 className={styles.title}>ROADMAP</h1>
+        </div>
+        <img src={roadmapline.src} alt="" className={styles.roadmapline} />
       </section>
     </div>
   )

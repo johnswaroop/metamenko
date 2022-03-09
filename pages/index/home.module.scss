@@ -182,6 +182,8 @@
 .sec3 {
     margin-top: 174px;
     display: flex;
+    justify-content: center;
+
     .leftHero {
         height: 717px;
         margin-left: -22%;
@@ -200,7 +202,7 @@
             width: 438px;
             margin-top: 20px;
             font-weight: 300;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
         }
 
         .heading2 {
@@ -213,6 +215,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #f4f1e9;
+
     p {
         font-size: 18px;
         font-weight: 900;
@@ -231,34 +235,139 @@
     background: #210e3e;
     display: flex;
     width: 100%;
-    height: 100vh;
+    // height: 200vh;
     flex-direction: column;
     align-items: center;
     color: white;
 
     .cardCon {
         display: flex;
-        img {
-            width: 335px;
-            margin: 0 auto;
-            margin-top: 60px;
-        }
+        align-items: center;
+        height: 586px;
+        margin-bottom: 100px;
 
         .card {
+            transition: all 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
             width: 375px;
+            height: 440px;
             margin: 0 28px;
-            background: linear-gradient(180deg, #d2dcff 0%, #7b85c4 100%);
-            box-shadow: inset 0px -10px 0px #4e589a;
             border-radius: 16px;
             justify-content: space-between;
+            padding-bottom: 60px;
+            cursor: pointer;
+
+            img {
+                width: 335px;
+                margin: 0 auto;
+                margin-top: 60px;
+                margin-bottom: 60px;
+            }
+
             h1 {
                 margin-top: 0;
                 font-size: 50px;
                 font-family: "Bebas Neue", cursive;
                 font-weight: 400;
+                margin-bottom: 1rem;
+                letter-spacing: 2px;
+            }
+
+            p {
+                letter-spacing: 1px;
+                font-size: 16px;
+                font-weight: 300;
+                margin-bottom: 0;
+            }
+
+            .text {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            .underline {
+                display: flex;
+                width: 70px;
+                height: 2.5px;
+                border-radius: 100px;
+                background-color: white;
+            }
+
+            .textBlock {
+                display: none;
+                animation: appear 0.5s ease-in-out;
             }
         }
+
+        .blue {
+            background: linear-gradient(180deg, #d2dcff 0%, #7b85c4 100%);
+            box-shadow: inset 0px -10px 0px #4e589a;
+
+            &:hover {
+                height: 586px;
+
+                .textBlock {
+                    display: block;
+                }
+            }
+        }
+
+        .green {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                linear-gradient(180deg, #d2dcff 0%, #aed6c4 70.83%);
+            box-shadow: inset 0px -10px 0px #408765;
+
+            &:hover {
+                height: 586px;
+
+                .textBlock {
+                    display: block;
+                }
+            }
+        }
+
+        .purple {
+            img {
+                margin-top: 35px;
+            }
+
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+                linear-gradient(180deg, #d2dcff 0%, #553682 70.31%);
+            box-shadow: inset 0px -10px 0px #553d77;
+
+            &:hover {
+                height: 586px;
+
+                .textBlock {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.sec5 {
+    display: flex;
+    width: 100%;
+    height: 200vh;
+    flex-direction: column;
+    background: linear-gradient(173.9deg, #744a87 -14.2%, rgba(74, 52, 122, 0.22) 135.08%, #250d44 154.8%), #210e3e;
+
+    .roadmapline {
+        height: 1000px;
+        object-fit: contain;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
