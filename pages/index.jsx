@@ -8,7 +8,7 @@ import leftHero from './assets/leftHero.png'
 import crab from './assets/crab.png'
 import smallEgg from './assets/smallEgg.png'
 import cucumber from './assets/cucumber.png'
-import roadmapline from './assets/roadline.png'
+
 
 function importAll(r) {
   let images = {};
@@ -150,7 +150,7 @@ function Home() {
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
         <div className={styles.roadmapContainer}>
-          <img src={roadmapline.src} alt="" className={styles.roadmapline} />
+          <img src={'/roadline.png'} alt="" className={styles.roadmapline} />
           <div className={styles.roadmapCard + ' ' + styles.rm1}>
             <h1>01 INCEPTION</h1>
 
