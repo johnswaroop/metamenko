@@ -8,7 +8,11 @@ import leftHero from './assets/leftHero.png'
 import crab from './assets/crab.png'
 import smallEgg from './assets/smallEgg.png'
 import cucumber from './assets/cucumber.png'
-
+import greenfan from './assets/roadmap/Bamboo-3.png'
+import sushi from './assets/roadmap/Cucumber-4.png'
+import f12 from './assets/roadmap/Frame 12.png'
+import warrior from './assets/roadmap/Frame 423.png'
+import shrimp from './assets/roadmap/Shrimp-1.png'
 
 function importAll(r) {
   let images = {};
@@ -145,6 +149,11 @@ function Home() {
         </div>
       </section>
       <section className={styles.sec5}>
+        <img src={greenfan.src} alt="" className={styles.float_greenfan} />
+        <img src={sushi.src} alt="" className={styles.float_sushi} />
+        <img src={f12.src} alt="" className={styles.float_f12} />
+        <img src={warrior.src} alt="" className={styles.float_warrior} /> 
+        <img src={shrimp.src} alt="" className={styles.float_shrimp} />
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>OUR</p>
           <h1 className={styles.title}>ROADMAP</h1>

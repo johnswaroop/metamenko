@@ -350,9 +350,12 @@
 .sec5 {
     display: flex;
     width: 100%;
-    height: 300vh;
+    //height: 300vh;
     flex-direction: column;
     background: linear-gradient(173.9deg, #744a87 -14.2%, rgba(74, 52, 122, 0.22) 135.08%, #250d44 154.8%), #210e3e;
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 130px;
 
     .roadmapline {
         height: 1270px;
@@ -421,6 +424,45 @@
 
     .rm4 {
         height: 319px;
+    }
+
+    .float_greenfan {
+        position: absolute;
+        top: -5%;
+        right: -13%;
+        width: 553.81px;
+        z-index: 500;
+    }
+
+    .float_sushi {
+        position: absolute;
+        top: -2%;
+        left: -4%;
+        width: 388px;
+    }
+
+    .float_f12 {
+        position: absolute;
+        top: 40%;
+        z-index: 100;
+        left: -8%;
+        width: 370px;
+    }
+
+    .float_warrior {
+        position: absolute;
+        width: 373.27px;
+        z-index: 100;
+        right: -3%;
+        bottom: 21%;
+    }
+
+    .float_shrimp {
+        position: absolute;
+        width: 339px;
+        bottom: 3%;
+        left: 1%;
+        z-index: 100;
     }
 }
 
