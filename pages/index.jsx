@@ -149,7 +149,49 @@ function Home() {
           <p className={styles.subTitle}>OUR</p>
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
-        <img src={roadmapline.src} alt="" className={styles.roadmapline} />
+        <div className={styles.roadmapContainer}>
+          <img src={roadmapline.src} alt="" className={styles.roadmapline} />
+          <div className={styles.roadmapCard + ' ' + styles.rm1}>
+            <h1>01 INCEPTION</h1>
+
+            <ul>
+              <li>Artists conceptualize and design unique worlds for the Menkoverse</li>
+              <li>Mystery Pack functionality build on Solana blockchain</li>
+              <li>Alpha game design and MVP</li>
+              <li>Menkoverse Guild</li>
+            </ul>
+
+          </div>
+          <div className={styles.roadmapCard + ' ' + styles.rm2}>
+            <h1>02 AWAKENING</h1>
+            <ul>
+              <li>Limited Mystery Pack Giveaways</li>
+              <li>Whitelist Sale</li>
+              <li>Public Sale</li>
+              <li>Rarity List reveal</li>
+              <li>Exclusive game access to Menko hodlers</li>
+              <li>Character background stories reveal</li>
+            </ul>
+          </div>
+          <div className={styles.roadmapCard + ' ' + styles.rm3}>
+            <h1>03 EVOLUTION</h1>
+            <ul>
+              <li>MetaMenko DAO creation</li>
+              <li>Passive income channel implementation</li>
+              <li>Formation of Gaming Guild</li>
+              <li>Game expansion</li>
+            </ul>
+          </div>
+          <div className={styles.roadmapCard + ' ' + styles.rm4}>
+            <h1>04 INTO THE MENKOVERSE</h1>
+            <ul>
+              <li>Menkoverse brand expansion</li>
+              <li>Future worlds unlock</li>
+              <li>Animated series created by our Emmy-nominated cinematics and animation team</li>
+              <li>MetaMenko Community Expansion<br/>...and beyond!</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   )
