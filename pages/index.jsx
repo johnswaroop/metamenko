@@ -1,14 +1,14 @@
 import styles from './index/home.module.scss'
 import Nav from './index/components/Nav'
-import dragon from './../assets/dragon.png'
-import egg from './../assets/egg.png'
-import fan from './../assets/fan.png'
-import heroLogo from './../assets/Metamenko.svg'
-import leftHero from './../assets/leftHero.png'
-import crab from './../assets/crab.png'
-import smallEgg from './../assets/smallEgg.png'
-import cucumber from './../assets/cucumber.png'
-import roadmapline from './../assets/roadline.png'
+import dragon from './assets/dragon.png'
+import egg from './assets/egg.png'
+import fan from './assets/fan.png'
+import heroLogo from './assets/Metamenko.svg'
+import leftHero from './assets/leftHero.png'
+import crab from './assets/crab.png'
+import smallEgg from './assets/smallEgg.png'
+import cucumber from './assets/cucumber.png'
+import roadmapline from './assets/roadline.png'
 
 function importAll(r) {
   let images = {};
@@ -16,8 +16,8 @@ function importAll(r) {
   return images;
 }
 
-const r1_images = importAll(require.context('./../assets/icons/r1', false, /\.(png|jpe?g|svg)$/));
-const r2_images = importAll(require.context('./../assets/icons/r2', false, /\.(png|jpe?g|svg)$/));
+const r1_images = importAll(require.context('./assets/icons/r1', false, /\.(png|jpe?g|svg)$/));
+const r2_images = importAll(require.context('./assets/icons/r2', false, /\.(png|jpe?g|svg)$/));
 // Object.values(images)[0].default.src
 function Home() {
   return (
@@ -188,7 +188,7 @@ function Home() {
               <li>Menkoverse brand expansion</li>
               <li>Future worlds unlock</li>
               <li>Animated series created by our Emmy-nominated cinematics and animation team</li>
-              <li>MetaMenko Community Expansion<br/>...and beyond!</li>
+              <li>MetaMenko Community Expansion<br />...and beyond!</li>
             </ul>
           </div>
         </div>

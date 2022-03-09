@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './nav.module.scss'
-import logo from '../../../../assets/logo.png'
-import discord from '../../../../assets/discord.png'
-import twitter from '../../../../assets/twitter.png'
-import medium from '../../../../assets/medium.png'
+import logo from '../../../assets/logo.png'
+import discord from '../../../assets/discord.png'
+import twitter from '../../../assets/twitter.png'
+import medium from '../../../assets/medium.png'
 
 
 function Nav() {
