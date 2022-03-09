@@ -8,7 +8,7 @@ import leftHero from './../assets/leftHero.png'
 import crab from './../assets/crab.png'
 import smallEgg from './../assets/smallEgg.png'
 import cucumber from './../assets/cucumber.png'
-import roadmapline from './../assets/roadmapline.png'
+import roadmapline from './../assets/roadline.png'
 
 function importAll(r) {
   let images = {};
