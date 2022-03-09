@@ -25,31 +25,31 @@ a {
 
 @font-face {
   font-family: primary-font;
-  src: url(./CircularStd-Bold.otf);
+  src: url(/fonts/CircularStd-Bold.otf);
   font-weight: bold;
 }
 
 @font-face {
   font-family: primary-font;
-  src: url(./CircularStd-Light.otf);
+  src: url(/fonts/CircularStd-Light.otf);
   font-weight: 300;
 }
 
 @font-face {
   font-family: primary-font;
-  src: url(./CircularStd-Bold.otf);
+  src: url(/fonts/CircularStd-Bold.otf);
   font-weight: 900;
 }
 
 @font-face {
   font-family: primary-font;
-  src: url(./CircularStd-Medium.otf);
+  src: url(/fonts/CircularStd-Medium.otf);
   font-weight: 500;
 }
 
 @font-face {
   font-family: primary-font;
-  src: url(./CircularStd-Book.otf);
+  src: url(/fonts/CircularStd-Book.otf);
   font-weight: 350;
 }
 
