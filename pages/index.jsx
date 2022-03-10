@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './index/home.module.scss'
 import Nav from './index/components/Nav'
 import dragon from './assets/dragon.png'
@@ -32,8 +33,23 @@ const team = importAll(require.context('./assets/Team-Menkos', false, /\.(png|jp
 //team data 
 const teamdata = [['CORE', 'Product'], ['CORE', 'Design'], ['CORE', 'Community'], ['NFT ARTIST', '@fatima'], ['WEB DESIGN', '@afshin'],
 ['DEV Team', '@Raj'], ['GAME STUDIO', '@AliO'], ['ANIMATION STUDIO', 'Media Production'], ['CREATIVE WRITER', 'Storytelling'], ['CREATIVE WRITER', 'Storytelling']]
-console.log(team)
+
 // Object.values(images)[0].default.src
+
+const questions =
+  [
+    ['What is MetaMenko?', 'An NFT-based gaming project built on the Solana blockchain.'],
+    ['What are Menkos?', 'These are individual NFTs that enable users to play the MetaMenko game and earn rewards as well as passive income.'],
+    ['What utility do Menkos have for gamers?', 'At their core, Menko NFTs unlock the ability to compete in a strategy-based game, MetaMenko. Each Menko has unique characteristics that can either boost your power of attack or augment defensive moves. Some even allow you to unleash magical powers in battle, defeating your opponent or bringing to life a fellow downed Menko. Winning battles in the various worlds of MetaMenko unlocks legendary NFTs hidden in secret vaults, as well as additional rewards that can only be procured via gameplay.'],
+    ['What utility do Menkos have for collectors?', 'Menko worlds are imagined by select artists under-represented in the NFT space. Artists skillfully bring to life each character, object, and attribute within their world; and give them purpose within the Menkoverse. Holding Menkos gives you exclusive access to each artist’s community and future projects. Collectors will also be entitled to airdrops of future MetaMenko projects in the pipeline. Additionally, MetaMenko is partnering with other NFT projects to enable whitelisting and early access to their alpha communities.'],
+    ['What utility do Menkos have for hodlers?', 'Holding 3 Menkos in your wallet gives you access to the community DAO and allows you to shape the MetaMenko brand and direction for the entire Menkoverse. Along with voting on the MetaMenko roadmap, the DAO also formalizes passive income strategies. Whether it’s setting up a Solana Validator, using innovative yield farming strategies or vaults, or sweeping the MetaMenko floor - income generated from the project will be equitably distributed to diamond hand hodlers.'],
+    ['What’s a mystery pack and how do I open it?', 'We are the first Solana-based NFT project to build this mystery pack feature that allows users to decide when to burn their packs and unlock their Menkos. Pack unlock will go live 1 week after mint. Anytime thereafter, users can return to the MetaMenko site, connect their wallet, and choose to tear open their pack. The revealed Menkos will then be automatically found in your wallet.'],
+    ['What does the Menkoverse future hodl?', 'The Menkoverse is constantly expanding, and we’re just getting started! At the core of our vision is building a robust brand with the support of an engaged community to provide valuable utility to all who engage with MetaMenko.'],
+    ['How is passive income generated?', "We're shortlisting multiple channels of passive income, and decision will ultimately be made by the MetaMenko DAO."],
+    ['What is the MetaMenko DAO?', 'Hodlers of Menkos will be able to join the official DAO and give their voice to roadmap, collaborations, game expansion, and various passive income strategies.'],
+    ['How do I get on the Whitelist?', 'Join Discord for details.'],
+  ]
+
 function Home() {
   return (
     <div className={styles.page}>
@@ -213,6 +229,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <section className={styles.sec6}>
         <h1>FOLLOW US!</h1>
         <img className={styles.float_allIcons} src={allSocialIcons.src} alt="" />
@@ -222,6 +239,7 @@ function Home() {
           <img src={discordIcon.src} alt="" />
         </span>
       </section>
+
       <section className={styles.sec7}>
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>MEET THE</p>
@@ -247,6 +265,45 @@ function Home() {
           }
         </div>
       </section>
+
+      <section className={styles.sec8}>
+        <h1 className={styles.title}>FAQ</h1>
+        <div className={styles.questions}>
+          <div className={styles.c1}>
+            {
+              questions.slice(0, 5).map((data, i) => {
+                return (
+                  <Qn data={data} i={i} key={'q' + i} />
+                )
+              })
+            }
+          </div>
+          <div className={styles.c2}>
+            {
+              questions.slice(5).map((data, i) => {
+                return (
+                  <Qn data={data} i={i} key={'q' + i} />
+                )
+              })
+            }
+          </div>
+
+
+        </div>
+      </section>
+
+    </div>
+  )
+}
+
+function Qn({ data, i }) {
+  const [expand, setexpand] = useState(false);
+  let arrowPos = (!expand) ? "" : styles.rotate;
+  return (
+    <div key={'qn' + i} className={styles.qn} onClick={() => { setexpand(!expand) }}>
+      <span className={styles.arrow + ' ' + arrowPos}></span>
+      <h1>{data[0]}</h1>
+      {(expand) && <p>{data[1]}</p>}
     </div>
   )
 }
