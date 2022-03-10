@@ -222,6 +222,7 @@
         font-weight: 900;
         margin: 0;
         margin-top: 130px;
+        color: #f7d9a6;
     }
 
     h1 {
@@ -356,7 +357,6 @@
     position: relative;
     overflow-x: hidden;
     padding-bottom: 130px;
-
     .roadmapline {
         height: 1270px;
         object-fit: contain;
@@ -463,6 +463,116 @@
         bottom: 3%;
         left: 2%;
         z-index: 100;
+    }
+}
+
+.sec6 {
+    width: 100%;
+    height: 566px;
+    background: radial-gradient(60.59% 487.7% at 23.13% 27.47%, #818dc6 0%, #4b4ab9 96.7%);
+    padding: 76px 179px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    h1 {
+        width: 475px;
+        font-weight: 900;
+        font-size: 100px;
+        font-family: primary-font;
+        color: #f4f1e9;
+        margin-bottom: 55px;
+        margin-top: 0;
+
+        &::after {
+            content: "";
+            display: flex;
+            width: 100%;
+            height: 3.5px;
+            margin-top: 40px;
+            background: rgb(255, 255, 255);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 35%, rgba(9, 9, 121, 0) 100%);
+        }
+    }
+
+    .float_allIcons {
+        position: absolute;
+        height: 566px;
+        right: 0;
+        top: 0;
+    }
+
+    .socialIcons {
+        img {
+            height: 75px;
+            margin: 0 15px;
+        }
+    }
+}
+
+.sec7 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 1199px;
+    background: radial-gradient(44.26% 44.87% at 50% 58.78%, rgba(202, 133, 175, 0.5) 0%, rgba(57, 35, 91, 0.5) 100%),
+        linear-gradient(180deg, #210e3e 0%, #351f67 100%);
+    align-items: center;
+
+    .titleCon {
+        h1 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .sec7Subtext {
+        font-weight: 300;
+        font-size: 20px;
+        color: #f4f1e9;
+        width: 427px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .teamrow {
+        display: grid;
+        grid-row: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        span {
+            display: flex;
+            flex-direction: column;
+            width: 210px;
+            height: 288px;
+            background: #f4f1e9;
+            margin: 20px 15px;
+            border-radius: 16px;
+            position: relative;
+            img {
+                width: 190px;
+                object-fit: contain;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                margin-top: 12px;
+            }
+
+            h1 {
+                margin: 0 auto;
+                margin-top: auto;
+                font-size: 28px;
+                font-family: proxima;
+                margin-bottom: 8px;
+            }
+
+            p {
+                margin: 0 auto;
+                margin-bottom: 18px;
+                font-weight: 350;
+            }
+        }
     }
 }
 

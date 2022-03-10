@@ -13,6 +13,10 @@ import sushi from './assets/roadmap/Cucumber-4.png'
 import f12 from './assets/roadmap/Frame 12.png'
 import warrior from './assets/roadmap/Frame 423.png'
 import shrimp from './assets/roadmap/Shrimp-1.png'
+import allSocialIcons from './assets/follow-us-icons/Follow-us-graphics.png'
+import mediumIcon from './assets/follow-us-icons/Subtract.png'
+import twitterIcon from './assets/follow-us-icons/Subtract-1.png'
+import discordIcon from './assets/follow-us-icons/Twitter social icons - rounded square - white 1.png'
 
 function importAll(r) {
   let images = {};
@@ -22,6 +26,13 @@ function importAll(r) {
 
 const r1_images = importAll(require.context('./assets/icons/r1', false, /\.(png|jpe?g|svg)$/));
 const r2_images = importAll(require.context('./assets/icons/r2', false, /\.(png|jpe?g|svg)$/));
+
+//team icons
+const team = importAll(require.context('./assets/Team-Menkos', false, /\.(png|jpe?g|svg)$/));
+//team data 
+const teamdata = [['CORE', 'Product'], ['CORE', 'Design'], ['CORE', 'Community'], ['NFT ARTIST', '@fatima'], ['WEB DESIGN', '@afshin'],
+['DEV Team', '@Raj'], ['GAME STUDIO', '@AliO'], ['ANIMATION STUDIO', 'Media Production'], ['CREATIVE WRITER', 'Storytelling'], ['CREATIVE WRITER', 'Storytelling']]
+console.log(team)
 // Object.values(images)[0].default.src
 function Home() {
   return (
@@ -152,7 +163,7 @@ function Home() {
         <img src={greenfan.src} alt="" className={styles.float_greenfan} />
         <img src={sushi.src} alt="" className={styles.float_sushi} />
         <img src={f12.src} alt="" className={styles.float_f12} />
-        <img src={warrior.src} alt="" className={styles.float_warrior} /> 
+        <img src={warrior.src} alt="" className={styles.float_warrior} />
         <img src={shrimp.src} alt="" className={styles.float_shrimp} />
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>OUR</p>
@@ -200,6 +211,40 @@ function Home() {
               <li>MetaMenko Community Expansion<br />...and beyond!</li>
             </ul>
           </div>
+        </div>
+      </section>
+      <section className={styles.sec6}>
+        <h1>FOLLOW US!</h1>
+        <img className={styles.float_allIcons} src={allSocialIcons.src} alt="" />
+        <span className={styles.socialIcons}>
+          <img src={mediumIcon.src} alt="" />
+          <img src={twitterIcon.src} alt="" />
+          <img src={discordIcon.src} alt="" />
+        </span>
+      </section>
+      <section className={styles.sec7}>
+        <div className={styles.titleCon}>
+          <p className={styles.subTitle}>MEET THE</p>
+          <h1 className={styles.title}>TEAM</h1>
+        </div>
+
+        <p className={styles.sec7Subtext}>
+          Crypto OG team with decades of <br />
+          experience designing games and software.
+        </p>
+
+        <div className={styles.teamrow}>
+          {
+            Object.values(team).map((ele, i) => {
+              return (
+                <span key={"team" + i} name={ele.default.src}>
+                  <img src={ele.default.src} alt="" />
+                  <h1>{teamdata[i][0]}</h1>
+                  <p>{teamdata[i][1]}</p>
+                </span>
+              )
+            })
+          }
         </div>
       </section>
     </div>

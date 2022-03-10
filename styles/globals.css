@@ -53,6 +53,11 @@ a {
   font-weight: 350;
 }
 
+@font-face {
+  font-family: proxima;
+  src: url(/fonts/proxima-nova-extra-condensed-bold-latin-1.ttf);
+}
+
 /* @media (min-resolution: 1dppx) {
   body,
   html {
