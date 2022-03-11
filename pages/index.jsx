@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './index/home.module.scss'
 import Nav from './index/components/Nav'
 import dragon from './assets/dragon.png'
@@ -21,6 +21,7 @@ import discordIcon from './assets/follow-us-icons/Twitter social icons - rounded
 import discord from './assets/discord.png'
 import twitter from './assets/twitter.png'
 import medium from './assets/medium.png'
+
 
 
 function importAll(r) {
@@ -55,6 +56,14 @@ const questions =
   ]
 
 function Home() {
+  const [windowWidth, setwindowWidth] = useState(1000);
+
+  useEffect(() => {
+    window.addEventListener('resize', function (e) {
+      setwindowWidth(e.srcElement.innerWidth);
+    }, true);
+  }, [])
+
   return (
     <>
       <div className={styles.page}>
@@ -191,7 +200,10 @@ function Home() {
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
         <div className={styles.roadmapContainer}>
-          <img src={'/roadline.png'} alt="" className={styles.roadmapline} />
+          {
+            (windowWidth > 1260) ? <img src={'/roadline.png'} alt="" className={styles.roadmapline} /> : <img src={'/roadline_tablet.png'} alt="" className={styles.roadmapline} />
+          }
+
           <div className={styles.roadmapCard + ' ' + styles.rm1}>
             <h1>01 INCEPTION</h1>
 
@@ -260,7 +272,9 @@ function Home() {
           {
             Object.values(team).map((ele, i) => {
               return (
-                <span key={"team" + i} name={ele.default.src}>
+                <span key={"team" + i} name={ele.default.src}
+                  style={getGridName(i, windowWidth)}
+                >
                   <img src={ele.default.src} alt="" />
                   <h1>{teamdata[i][0]}</h1>
                   <p>{teamdata[i][1]}</p>
@@ -268,6 +282,7 @@ function Home() {
               )
             })
           }
+
         </div>
       </section>
 
@@ -329,6 +344,20 @@ function Qn({ data, i }) {
       {(expand) && <p>{data[1]}</p>}
     </div>
   )
+}
+
+const getGridName = (i, windowWidth) => {
+  if (windowWidth <= 1260) {
+    if (i == 8) {
+      return { gridArea: 'l' }
+    }
+    if (i == 9) {
+      return { gridArea: 'm' }
+    }
+    else {
+      return {}
+    }
+  }
 }
 
 export default Home
