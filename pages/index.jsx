@@ -21,6 +21,8 @@ import discordIcon from './assets/follow-us-icons/Twitter social icons - rounded
 import discord from './assets/discord.png'
 import twitter from './assets/twitter.png'
 import medium from './assets/medium.png'
+import followMobile from './assets/follow-us-icons/followus-mobile.png'
+import wavebg from './assets/wavebg.png'
 
 
 
@@ -67,9 +69,10 @@ function Home() {
   return (
     <>
       <div className={styles.page}>
-
+        <img src={wavebg.src} alt="" className={styles.wave_bg} />
         <section className={styles.sec1}>
           <Nav></Nav>
+
           <img src={dragon.src} alt="" className={styles.float_dragon} />
           <img src={egg.src} alt="" className={styles.float_egg} />
           <img src={fan.src} alt="" className={styles.float_fan} />
@@ -102,7 +105,36 @@ function Home() {
           </div>
 
           <div className={styles.nftSlider}>
-            <div className={styles.nftCoinRow1}>
+            <div className={styles.slidernav}>
+              <span onClick={() => {
+                console.log("left");
+                let ele = document.querySelector('#slider1');
+                ele.scroll({
+                  left: ele.scrollLeft-150,
+                  behavior: 'smooth'  // 👈 
+                });
+                ele = document.querySelector('#slider2');
+                ele.scroll({
+                  left: ele.scrollLeft-150,
+                  behavior: 'smooth'  // 👈 
+                });
+              }}></span>
+              <span onClick={() => {
+                console.log("right");
+                let ele = document.querySelector('#slider1');
+                ele.scroll({
+                  left: ele.scrollLeft+150,
+                  behavior: 'smooth'  // 👈 
+                });
+                ele = document.querySelector('#slider2');
+                ele.scroll({
+                  left: ele.scrollLeft+150,
+                  behavior: 'smooth'  // 👈 
+                });
+
+              }}></span>
+            </div>
+            <div id={"slider1"} className={styles.nftCoinRow1}>
               {
                 Object.values(r1_images).map((ele, i) => {
                   return (
@@ -114,7 +146,7 @@ function Home() {
               }
             </div>
 
-            <div className={styles.nftCoinRow2}>
+            <div id={"slider2"} className={styles.nftCoinRow2}>
               {
                 Object.values(r2_images).map((ele, i) => {
                   return (
@@ -201,7 +233,7 @@ function Home() {
         </div>
         <div className={styles.roadmapContainer}>
           {
-            (windowWidth > 1260) ? <img src={'/roadline.png'} alt="" className={styles.roadmapline} /> : <img src={'/roadline_tablet.png'} alt="" className={styles.roadmapline} />
+            (windowWidth > 1260) ? <img src={'/roadline.png'} alt="" className={styles.roadmapline} /> : ((windowWidth < 750) ? < img src={'/rm.png'} alt="" className={styles.roadmapline} /> : < img src={'/roadline_tablet.png'} alt="" className={styles.roadmapline} />)
           }
 
           <div className={styles.roadmapCard + ' ' + styles.rm1}>
@@ -249,7 +281,10 @@ function Home() {
 
       <section className={styles.sec6}>
         <h1>FOLLOW US!</h1>
-        <img className={styles.float_allIcons} src={allSocialIcons.src} alt="" />
+        {
+          (windowWidth >= 750) ? <img className={styles.float_allIcons} src={allSocialIcons.src} alt="" /> : <img className={styles.float_allIcons} src={followMobile.src} alt="" />
+        }
+
         <span className={styles.socialIcons}>
           <img src={mediumIcon.src} alt="" />
           <img src={twitterIcon.src} alt="" />
@@ -347,7 +382,7 @@ function Qn({ data, i }) {
 }
 
 const getGridName = (i, windowWidth) => {
-  if (windowWidth <= 1260) {
+  if (windowWidth <= 1260 && windowWidth > 750) {
     if (i == 8) {
       return { gridArea: 'l' }
     }
