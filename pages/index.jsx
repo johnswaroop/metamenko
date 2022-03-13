@@ -58,8 +58,11 @@ const questions =
   ]
 
 function Home() {
-  const [windowWidth, setwindowWidth] = useState(1000);
+  const [windowWidth, setwindowWidth] = useState(1920);
 
+  useEffect(() => {
+    setwindowWidth(document.querySelector('body').getBoundingClientRect().width);
+  }, [])
   useEffect(() => {
     window.addEventListener('resize', function (e) {
       setwindowWidth(e.srcElement.innerWidth);
@@ -382,6 +385,7 @@ const getGridName = (i, windowWidth) => {
       return {}
     }
   }
+  return {}
 }
 
 export default Home
