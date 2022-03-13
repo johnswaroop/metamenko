@@ -549,7 +549,17 @@
     }
 
     @media (max-width: 1260px) {
+        .titleCon {
+            p {
+                margin-top: 0px;
+            }
+        }
+        
         .cardCon {
+            height: min-content;
+
+            
+
             .card {
                 width: 198.12px;
                 height: 260px;
