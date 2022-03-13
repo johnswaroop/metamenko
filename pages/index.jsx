@@ -64,7 +64,16 @@ function Home() {
     window.addEventListener('resize', function (e) {
       setwindowWidth(e.srcElement.innerWidth);
     }, true);
+
   }, [])
+
+  useEffect(() => {
+    let r1 = document.querySelector('#slider1');
+    console.log(r1.getBoundingClientRect().width)
+    r1.scrollTo({
+      left: r1.getBoundingClientRect().width
+    })
+  }, [windowWidth])
 
   return (
     <>
@@ -105,40 +114,20 @@ function Home() {
           </div>
 
           <div className={styles.nftSlider}>
-            <div className={styles.slidernav}>
-              <span onClick={() => {
-                console.log("left");
-                let ele = document.querySelector('#slider1');
-                ele.scroll({
-                  left: ele.scrollLeft-150,
-                  behavior: 'smooth'  // 👈 
-                });
-                ele = document.querySelector('#slider2');
-                ele.scroll({
-                  left: ele.scrollLeft-150,
-                  behavior: 'smooth'  // 👈 
-                });
-              }}></span>
-              <span onClick={() => {
-                console.log("right");
-                let ele = document.querySelector('#slider1');
-                ele.scroll({
-                  left: ele.scrollLeft+150,
-                  behavior: 'smooth'  // 👈 
-                });
-                ele = document.querySelector('#slider2');
-                ele.scroll({
-                  left: ele.scrollLeft+150,
-                  behavior: 'smooth'  // 👈 
-                });
 
-              }}></span>
-            </div>
             <div id={"slider1"} className={styles.nftCoinRow1}>
               {
                 Object.values(r1_images).map((ele, i) => {
+                  let last = ''
+                  if ((i + 1) == Object.values(r1_images).length) {
+                    last = styles.last_r1;
+                    console.log(i)
+                  }
+                  else {
+                    last = ''
+                  }
                   return (
-                    <div key={'r' + i} className={styles.coin}>
+                    <div key={'r' + i} className={styles.coin} id={last}>
                       <img src={ele.default.src} alt="" />
                     </div>
                   )
