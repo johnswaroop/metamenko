@@ -317,6 +317,9 @@
 }
 
 .nftSlider {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
     .coin {
         min-width: 100px;
         height: 100px;
@@ -430,6 +433,7 @@
 }
 
 .sec4 {
+    padding-top: 5rem;
     background: #210e3e;
     display: flex;
     width: 100%;
@@ -630,8 +634,6 @@
     position: relative;
     overflow-x: hidden;
     padding-bottom: 130px;
-
-    
 
     .roadmapline {
         height: 1270px;
@@ -1025,7 +1027,7 @@
         grid-template-rows: 1fr 1fr;
         overflow: hidden;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        
+
         span {
             display: flex;
             flex-direction: column;
@@ -1190,7 +1192,7 @@
             .rotate {
                 transition: all 0.3s ease-in-out;
                 transform: rotate(180deg);
-               // border: 1px solid red;
+                // border: 1px solid red;
             }
         }
     }

@@ -223,6 +223,7 @@ function Home() {
           <p className={styles.subTitle}>OUR</p>
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
+        
         <div className={styles.roadmapContainer}>
           {
             (windowWidth > 1260) ? <img src={'/roadline.png'} alt="" className={styles.roadmapline} /> : ((windowWidth < 750) ? < img src={'/rm.png'} alt="" className={styles.roadmapline} /> : < img src={'/roadline_tablet.png'} alt="" className={styles.roadmapline} />)
