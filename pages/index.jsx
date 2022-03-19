@@ -62,6 +62,7 @@ function Home() {
 
   useEffect(() => {
     setwindowWidth(document.querySelector('body').getBoundingClientRect().width);
+
   }, [])
   useEffect(() => {
     window.addEventListener('resize', function (e) {
@@ -76,7 +77,16 @@ function Home() {
     r1.scrollTo({
       left: r1.getBoundingClientRect().width
     })
+    setSlideAnimation();
   }, [windowWidth])
+
+  const setSlideAnimation = () => {
+    let w_width = document.querySelector('body').getBoundingClientRect().width;
+    let s_width = document.querySelector('#slider1').getBoundingClientRect().width;
+    console.log({ "window": w_width, "slider": s_width });
+    let slide_width = (s_width - w_width)*(0.95);
+    document.querySelector(":root").style.setProperty('--slide', `translateX(-${slide_width}px)`);
+  }
 
   return (
     <>
@@ -120,7 +130,7 @@ function Home() {
 
             <div id={"slider1"} className={styles.nftCoinRow1}>
               {
-                Object.values(r1_images).map((ele, i) => {
+                [...Object.values(r1_images), ...Object.values(r1_images), ...Object.values(r1_images)].map((ele, i) => {
                   let last = ''
                   if ((i + 1) == Object.values(r1_images).length) {
                     last = styles.last_r1;
@@ -140,7 +150,7 @@ function Home() {
 
             <div id={"slider2"} className={styles.nftCoinRow2}>
               {
-                Object.values(r2_images).map((ele, i) => {
+                [...Object.values(r2_images), ...Object.values(r2_images), ...Object.values(r2_images)].map((ele, i) => {
                   return (
                     <div key={'r' + i} className={styles.coin}>
                       <img src={ele.default.src} alt="" />
@@ -219,15 +229,36 @@ function Home() {
         <img src={f12.src} alt="" className={styles.float_f12} />
         <img src={warrior.src} alt="" className={styles.float_warrior} />
         <img src={shrimp.src} alt="" className={styles.float_shrimp} />
+
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>OUR</p>
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
-        
+
         <div className={styles.roadmapContainer}>
-          {
-            (windowWidth > 1260) ? <img src={'/roadline.png'} alt="" className={styles.roadmapline} /> : ((windowWidth < 750) ? < img src={'/rm.png'} alt="" className={styles.roadmapline} /> : < img src={'/roadline_tablet.png'} alt="" className={styles.roadmapline} />)
-          }
+
+
+          <div className={styles.roadmapLine}>
+            <span className={styles.sec + ' ' + styles.topFade}>
+              <img src="/roadmapAssets/t0line.png" alt="" />
+            </span>
+            <div className={styles.marker}>
+              <img className={styles.glow} src={'/roadmapAssets/t0.png'} alt="" />
+            </div>
+            <span className={styles.sec + ' ' + styles.s1}></span>
+            <div className={styles.marker}>
+              <div className={styles.diamondMarker}></div>
+            </div>
+            <span className={styles.sec + ' ' + styles.s2}></span>
+            <div className={styles.marker}>
+              <div className={styles.diamondMarker}></div>
+            </div>
+            <span className={styles.sec + ' ' + styles.s3}></span>
+            <div className={styles.marker}>
+              <div className={styles.diamondMarker}></div>
+            </div>
+          </div>
+
 
           <div className={styles.roadmapCard + ' ' + styles.rm1}>
             <h1>01 INCEPTION</h1>
@@ -304,7 +335,9 @@ function Home() {
                   style={getGridName(i, windowWidth)}
                 >
                   <img src={ele.default.src} alt="" />
-                  <h1>{teamdata[i][0]}</h1>
+                  <h1
+                    style={(teamdata[i][0].length < 12) ? { marginBottom: "13px" } : {}}
+                  >{teamdata[i][0]}</h1>
                   <p>{teamdata[i][1]}</p>
                 </span>
               )
@@ -374,7 +407,7 @@ function Qn({ data, i }) {
   )
 }
 
-const getGridName = (i, windowWidth) => {
+const getGridName = (i, windowWidth, title) => {
   if (windowWidth <= 1260 && windowWidth > 750) {
     if (i == 8) {
       return { gridArea: 'l' }

@@ -9,6 +9,10 @@ body {
   font-family: primary-font;
 }
 
+/* img {
+  image-rendering: optimizeQuality;
+} */
+
 a {
   color: inherit;
   text-decoration: none;
