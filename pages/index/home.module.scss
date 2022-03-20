@@ -675,12 +675,15 @@
             .marker {
                 display: flex;
                 width: 25px;
-                min-height: 25px;
-                max-height: 25px;
+             
                 height: fit-content;
                 .glow {
                     transform: scale(2.25);
                     object-fit: contain;
+                    max-height: 25px;
+                    min-height: 25px;
+                    max-width: 25px;
+                    min-width: 25px;
                 }
                 img {
                     width: 100%;
