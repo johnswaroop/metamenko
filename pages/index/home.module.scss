@@ -43,6 +43,8 @@
 
     .float_heroLogo {
         margin-top: 150px;
+        width: 696px;
+    
     }
 
     .subTitle {
@@ -80,7 +82,7 @@
             font-size: 18px;
             color: var(--secondary);
             border: none;
-            box-shadow: 2.5px 3.5px 1px rgb(173, 173, 173);
+            box-shadow: 2.5px 3px 1px rgb(173, 173, 173);
             margin-bottom: 50px;
         }
     }
@@ -215,39 +217,45 @@
             margin-left: -100px;
             margin-bottom: 32px;
             justify-content: left;
-            .coin {
-                animation: slide 50s linear alternate infinite;
-            }
+            // .coin {
+            //     animation: slide 50s linear alternate infinite;
+            //     -webkit-animation: slide 50s linear alternate infinite;
+            // }
         }
 
         .nftCoinRow2 {
-            .coin {
-                animation: slide-rev 50s linear alternate infinite;
-            }
+            // .coin {
+            //     animation: slide-rev 50s linear alternate infinite;
+            //     -webkit-animation: slide-rev 50s linear alternate infinite;
+            // }
         }
 
         #last_r1 {
             //border: 4px solid red;
         }
 
-        @keyframes slide {
-            0% {
-                transform: var(--slide);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
+        // @keyframes slide {
+        //     0% {
+        //         -webkit-transform: translateX(var(--slide));
+        //         transform: translateX(var(--slide));
+        //     }
+        //     100% {
+        //         -webkit-transform: translateX(0);
+        //         transform: translateX(0);
+        //     }
+        // }
 
-        @keyframes slide-rev {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: var(--slide);
-            }
-            //var(--slide_rev);
-        }
+        // @keyframes slide-rev {
+        //     0% {
+        //         -webkit-transform: translateX(0);
+        //         transform: translateX(0);
+        //     }
+        //     100% {
+        //         -webkit-transform: translateX(var(--slide));
+        //         transform: translateX(var(--slide));
+        //     }
+        //     //var(--slide_rev);
+        // }
 
         .nftCoinRow1 {
             margin-bottom: 12px;
@@ -753,7 +761,7 @@
 
         &:hover {
             transition: all 0.3s ease-in;
-           // outline: 3px solid #f6c477;
+            // outline: 3px solid #f6c477;
         }
     }
 
@@ -1020,7 +1028,7 @@
                 background: rgb(255, 255, 255);
             }
         }
-    } 
+    }
 
     .float_allIcons {
         position: absolute;

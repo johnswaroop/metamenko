@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import styles from './index/home.module.scss'
 import Nav from './index/components/Nav'
 import dragon from './assets/dragon.png'
 import egg from './assets/egg.png'
 import fan from './assets/fan.png'
-import heroLogo from './assets/Metamenko.svg'
+import heroLogo from './assets/Metamenko.png'
 import leftHero from './assets/leftHero.png'
 import crab from './assets/crab.png'
 import smallEgg from './assets/smallEgg.png'
@@ -59,17 +59,15 @@ const questions =
 
 function Home() {
   const [windowWidth, setwindowWidth] = useState(1920);
+  const [sliderRail, setsliderRail] = useState('1000px');
 
   useEffect(() => {
     setwindowWidth(document.querySelector('body').getBoundingClientRect().width);
-
-  }, [])
-  useEffect(() => {
     window.addEventListener('resize', function (e) {
       setwindowWidth(e.srcElement.innerWidth);
     }, true);
-
   }, [])
+
 
   useEffect(() => {
     let r1 = document.querySelector('#slider1');
@@ -84,8 +82,41 @@ function Home() {
     let w_width = document.querySelector('body').getBoundingClientRect().width;
     let s_width = document.querySelector('#slider1').getBoundingClientRect().width;
     console.log({ "window": w_width, "slider": s_width });
-    let slide_width = (s_width - w_width)*(0.95);
-    document.querySelector(":root").style.setProperty('--slide', `translateX(-${slide_width}px)`);
+    let slide_width = (s_width - w_width) * (0.95);
+    //setsliderRail(`-${slide_width}px`);
+
+    let r1 = document.querySelector('#slider1');
+    let r2 = document.querySelector('#slider2');
+
+    let r1coinlist = r1.querySelectorAll(`.${styles.coin}`);
+    r1coinlist.forEach((node) => {
+      node.animate([
+        // keyframes
+        { transform: `translateX(-${slide_width}px)` },
+        { transform: 'translateX(0)' }
+      ], {
+        // timing options
+        duration: 50000,
+        iterations: Infinity,
+        direction: 'alternate'
+      });
+    })
+
+    let r2coinlist = r2.querySelectorAll(`.${styles.coin}`);
+    r2coinlist.forEach((node) => {
+      node.animate([
+        // keyframes
+        { transform: 'translateX(0)' },
+        { transform: `translateX(-${slide_width}px)` }
+      ], {
+        // timing options
+        duration: 50000,
+        iterations: Infinity,
+        direction: 'alternate',
+      });
+    })
+
+
   }
 
   return (
