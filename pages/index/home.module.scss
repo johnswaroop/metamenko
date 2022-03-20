@@ -675,6 +675,8 @@
             .marker {
                 display: flex;
                 width: 25px;
+                min-height: 25px;
+                max-height: 25px;
                 height: fit-content;
                 .glow {
                     transform: scale(2.25);
