@@ -88,33 +88,39 @@ function Home() {
     let r1 = document.querySelector('#slider1');
     let r2 = document.querySelector('#slider2');
 
-    let r1coinlist = r1.querySelectorAll(`.${styles.coin}`);
-    r1coinlist.forEach((node) => {
-      node.animate([
-        // keyframes
-        { transform: `translateX(-${slide_width}px)` },
-        { transform: 'translateX(0)' }
-      ], {
-        // timing options
-        duration: 50000,
-        iterations: Infinity,
-        direction: 'alternate'
-      });
-    })
+    try {
+      let r1coinlist = r1.querySelectorAll(`.${styles.coin}`);
+      r1coinlist.forEach((node) => {
+        node.animate([
+          // keyframes
+          { transform: `translateX(-${slide_width}px)` },
+          { transform: 'translateX(0)' }
+        ], {
+          // timing options
+          duration: 50000,
+          iterations: Infinity,
+          direction: 'alternate'
+        });
+      })
 
-    let r2coinlist = r2.querySelectorAll(`.${styles.coin}`);
-    r2coinlist.forEach((node) => {
-      node.animate([
-        // keyframes
-        { transform: 'translateX(0)' },
-        { transform: `translateX(-${slide_width}px)` }
-      ], {
-        // timing options
-        duration: 50000,
-        iterations: Infinity,
-        direction: 'alternate',
-      });
-    })
+      let r2coinlist = r2.querySelectorAll(`.${styles.coin}`);
+      r2coinlist.forEach((node) => {
+        node.animate([
+          // keyframes
+          { transform: 'translateX(0)' },
+          { transform: `translateX(-${slide_width}px)` }
+        ], {
+          // timing options
+          duration: 50000,
+          iterations: Infinity,
+          direction: 'alternate',
+        });
+      })
+    }
+    catch(er){
+      console.log(er);
+    }
+   
 
 
   }
