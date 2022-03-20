@@ -6,6 +6,13 @@ import twitter from '../../../assets/twitter.png'
 import medium from '../../../assets/medium.png'
 import menu from '../../../assets/menu.png'
 
+const openNewTab = (url) => {
+    let a = document.createElement('a');
+    a.target = '_blank';
+    a.href = url;
+    a.click();
+}
+
 function Nav() {
     const [windowWidth, setwindowWidth] = useState(1000);
 
@@ -18,24 +25,36 @@ function Nav() {
         <nav className={styles.nav}>
             <img src={menu.src} alt="" className={styles.menu} />
             <ul className={styles.links}>
-                <li>TEAM</li>
-                <li>ROADMAP</li>
-                <li>UTILITY</li>
+                <a href='#team'><li>TEAM</li></a>
+                <a href='#roadmap'><li>ROADMAP</li></a>
+                <a href='#utility'><li>UTILITY</li></a>
             </ul>
             <img className={styles.logo} src={logo.src} alt="" />
             <ul className={styles.icons}>
                 <li>
-                    <img src={discord.src} alt="" />
+                    <img
+                        onClick={() => {
+                            openNewTab('https://discord.gg/WSRacjHc/');
+                        }}
+                        src={discord.src} alt="" />
                 </li>
                 <li>
-                    <img src={medium.src} alt="" />
+                    <img
+                        onClick={() => {
+                            openNewTab('https://metamenko.medium.com/');
+                        }}
+                        src={medium.src} alt="" />
                 </li>
                 <li>
-                    <img src={twitter.src} alt="" />
+                    <img
+                        onClick={() => {
+                            openNewTab('https://twitter.com/metamenko/');
+                        }}
+                        src={twitter.src} alt="" />
                 </li>
 
             </ul>
-        </nav>
+        </nav >
     )
 }
 

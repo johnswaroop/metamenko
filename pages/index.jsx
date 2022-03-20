@@ -24,7 +24,12 @@ import medium from './assets/medium.png'
 import followMobile from './assets/follow-us-icons/followus-mobile.png'
 import wavebg from './assets/wavebg.png'
 
-
+const openNewTab = (url) => {
+  let a = document.createElement('a');
+  a.target = '_blank';
+  a.href = url;
+  a.click();
+}
 
 function importAll(r) {
   let images = {};
@@ -117,10 +122,10 @@ function Home() {
         });
       })
     }
-    catch(er){
+    catch (er) {
       console.log(er);
     }
-   
+
 
 
   }
@@ -199,7 +204,7 @@ function Home() {
           </div>
         </section>
 
-        <section className={styles.sec3}>
+        <section className={styles.sec3} >
           <img src={leftHero.src} alt="" className={styles.leftHero} />
           <div className={styles.sec3text}>
             <h1>WHAT IS METAMENKO?</h1>
@@ -210,7 +215,7 @@ function Home() {
         </section>
       </div>
       <section className={styles.sec4}>
-        <div className={styles.titleCon}>
+        <div className={styles.titleCon} id='utility'>
           <p className={styles.subTitle}>NFT</p>
           <h1 className={styles.title}>UTILITY</h1>
         </div>
@@ -272,7 +277,7 @@ function Home() {
           <h1 className={styles.title}>ROADMAP</h1>
         </div>
 
-        <div className={styles.roadmapContainer}>
+        <div id='roadmap' className={styles.roadmapContainer}>
 
 
           <div className={styles.roadmapLine}>
@@ -353,7 +358,7 @@ function Home() {
         </span>
       </section>
 
-      <section className={styles.sec7}>
+      <section id={"team"} className={styles.sec7}>
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>MEET THE</p>
           <h1 className={styles.title}>TEAM</h1>
@@ -411,19 +416,29 @@ function Home() {
       </section>
 
       <section className={styles.footer}>
-        <img src={heroLogo.src} alt="" />
+        <img onClick={() => {
+          window.location.href = './'
+        }} src={heroLogo.src} alt="" />
         <p>ENTER THE MENKOVERSE</p>
         <ul className={styles.iconsFooter}>
           <li>
-            <img src={medium.src} alt="" />
+            <img onClick={() => {
+              openNewTab('https://metamenko.medium.com/');
+            }} src={medium.src} alt="" />
           </li>
 
           <li>
-            <img src={discord.src} alt="" />
+            <img onClick={() => {
+              openNewTab('https://discord.gg/WSRacjHc/');
+            }}
+              src={discord.src} alt="" />
           </li>
 
           <li>
-            <img src={twitter.src} alt="" />
+            <img onClick={() => {
+              openNewTab('https://twitter.com/metamenko/');
+            }}
+              src={twitter.src} alt="" />
           </li>
 
         </ul>
