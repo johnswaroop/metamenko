@@ -659,6 +659,8 @@
     overflow-x: hidden;
     padding-bottom: 130px;
 
+  
+
     .roadmapContainer {
         width: 1070px;
         margin: 0 auto;
@@ -976,19 +978,19 @@
 
         .float_greenfan {
             width: 453.81px;
-            right: -70%;
+            right: -240px;
             top: -8%;
         }
 
         .float_sushi {
             position: absolute;
             top: 50px;
-            left: -35%;
+            left: -120px;
             width: 206.34px;
         }
 
         .float_f12 {
-            left: -23%;
+            left: -60px;
             top: 50%;
             width: 143.39px;
         }
@@ -1000,6 +1002,7 @@
 
         .float_shrimp {
             width: 204.25px;
+            left: 50px;
         }
     }
 }
@@ -1152,6 +1155,7 @@
             margin: 20px 15px;
             border-radius: 16px;
             position: relative;
+            cursor: pointer;
             img {
                 width: 190px;
                 object-fit: contain;

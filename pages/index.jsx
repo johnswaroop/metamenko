@@ -25,6 +25,7 @@ import followMobile from './assets/follow-us-icons/followus-mobile.png'
 import wavebg from './assets/wavebg.png'
 
 const openNewTab = (url) => {
+  if (url.length < 1) return
   let a = document.createElement('a');
   a.target = '_blank';
   a.href = url;
@@ -43,8 +44,8 @@ const r2_images = importAll(require.context('./assets/icons/r2', false, /\.(png|
 //team icons
 const team = importAll(require.context('./assets/Team-Menkos', false, /\.(png|jpe?g|svg)$/));
 //team data 
-const teamdata = [['CORE', 'Product'], ['CORE', 'Design'], ['CORE', 'Community'], ['NFT ARTIST', '@fatima'], ['WEB DESIGN', '@afshin'],
-['DEV Team', '@Raj'], ['GAME STUDIO', '@AliO'], ['ANIMATION STUDIO', 'Media Production'], ['CREATIVE WRITER', 'Storytelling'], ['CREATIVE WRITER', 'Storytelling']]
+const teamdata = [['CORE', 'Product', 'https://twitter.com/metamenko'], ['CORE', 'Design', 'https://twitter.com/metamenko'], ['CORE', 'Community', 'https://twitter.com/metamenko'], ['NFT ARTIST', '@fatima', 'https://www.instagram.com/fatimas_pages/'], ['WEB DESIGN', '@afshin', 'www.instagram.com/afshinase/'],
+['DEV Team', '@Raj', 'https://mobile.twitter.com/rajkaria_'], ['GAME STUDIO', '@AliO', 'https://twitter.com/metamenko'], ['ANIMATION STUDIO', '@Taha', 'https://www.linkedin.com/in/taha-viceroy-0417a73b/?originalSubdomain=pk'], ['CREATIVE WRITER', 'Murad', 'http://www.muradaldin.com/'], ['CREATIVE WRITER', 'Boaz', 'http://boazdror.com/']]
 
 // Object.values(images)[0].default.src
 
@@ -272,6 +273,7 @@ function Home() {
         <img src={warrior.src} alt="" className={styles.float_warrior} />
         <img src={shrimp.src} alt="" className={styles.float_shrimp} />
 
+        <div></div>
         <div className={styles.titleCon}>
           <p className={styles.subTitle}>OUR</p>
           <h1 className={styles.title}>ROADMAP</h1>
@@ -375,6 +377,7 @@ function Home() {
               return (
                 <span key={"team" + i} name={ele.default.src}
                   style={getGridName(i, windowWidth)}
+                  onClick={() => { openNewTab(teamdata[i][2]) }}
                 >
                   <img src={ele.default.src} alt="" />
                   <h1
