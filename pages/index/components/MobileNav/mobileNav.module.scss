@@ -57,6 +57,7 @@
     img {
         width: min(12vw, 50px);
         margin: 0 11px;
+        cursor: pointer;
     }
 }
 
@@ -68,6 +69,7 @@
     right: 47.8px;
     top: 49.5px;
     z-index: 2000;
+    cursor: pointer;
 }
 
 @keyframes appear {

@@ -102,7 +102,8 @@
         .menu{
             display: block;
             margin-right: auto;
-            width: 56px;
+            width: 20px;
+            margin-bottom: 5px;
         }
       
     }
@@ -110,4 +111,5 @@
 
 .menu{
     display: none;
+    cursor: pointer;
 }
