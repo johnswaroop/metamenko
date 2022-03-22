@@ -1,6 +1,7 @@
 import { useState, useEffect, useLayoutEffect } from 'react'
 import styles from './index/home.module.scss'
 import Nav from './index/components/Nav'
+import MobileNav from './index/components/MobileNav'
 import dragon from './assets/dragon.png'
 import egg from './assets/egg.png'
 import fan from './assets/fan.png'
@@ -131,12 +132,15 @@ function Home() {
 
   }
 
+  const [mobileNavOpen, setmobileNavOpen] = useState(false);
+
   return (
     <>
       <div className={styles.page}>
         <img src={wavebg.src} alt="" className={styles.wave_bg} />
         <section className={styles.sec1}>
-          <Nav></Nav>
+          <Nav setmobileNavOpen={setmobileNavOpen}></Nav>
+          {mobileNavOpen && <MobileNav setmobileNavOpen={setmobileNavOpen} />}
 
           <img src={dragon.src} alt="" className={styles.float_dragon} />
           <img src={egg.src} alt="" className={styles.float_egg} />

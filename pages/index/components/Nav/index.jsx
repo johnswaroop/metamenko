@@ -13,7 +13,7 @@ const openNewTab = (url) => {
     a.click();
 }
 
-function Nav() {
+function Nav({setmobileNavOpen}) {
     const [windowWidth, setwindowWidth] = useState(1000);
 
     useEffect(() => {
@@ -23,7 +23,9 @@ function Nav() {
     }, [])
     return (
         <nav className={styles.nav}>
-            <img src={menu.src} alt="" className={styles.menu} />
+            <img onClick={()=>{
+                setmobileNavOpen((t)=>{ return !t })
+            }} src={menu.src} alt="" className={styles.menu} />
             <ul className={styles.links}>
                 <a href='#team'><li>TEAM</li></a>
                 <a href='#roadmap'><li>ROADMAP</li></a>
