@@ -31,19 +31,20 @@ function Nav() {
             </ul>
             <img className={styles.logo} src={logo.src} alt="" />
             <ul className={styles.icons}>
-                <li>
-                    <img
-                        onClick={() => {
-                            openNewTab('https://discord.gg/WSRacjHc/');
-                        }}
-                        src={discord.src} alt="" />
-                </li>
+
                 <li>
                     <img
                         onClick={() => {
                             openNewTab('https://metamenko.medium.com/');
                         }}
                         src={medium.src} alt="" />
+                </li>
+                <li>
+                    <img
+                        onClick={() => {
+                            openNewTab('https://discord.gg/metamenko');
+                        }}
+                        src={discord.src} alt="" />
                 </li>
                 <li>
                     <img

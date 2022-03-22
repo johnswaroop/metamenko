@@ -44,7 +44,6 @@
     .float_heroLogo {
         margin-top: 150px;
         width: 696px;
-    
     }
 
     .subTitle {
@@ -465,7 +464,7 @@
         margin-bottom: 100px;
 
         .card {
-            //transition: all 0.25s ease-in-out;
+            transition: all 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
             width: 375px;
@@ -523,8 +522,9 @@
             box-shadow: inset 0px -10px 0px #4e589a;
 
             &:hover {
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
                 height: 586px;
-
                 .textBlock {
                     display: block;
                 }
@@ -537,8 +537,9 @@
             box-shadow: inset 0px -10px 0px #408765;
 
             &:hover {
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
                 height: 586px;
-
                 .textBlock {
                     display: block;
                 }
@@ -553,10 +554,10 @@
             background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
                 linear-gradient(180deg, #d2dcff 0%, #553682 70.31%);
             box-shadow: inset 0px -10px 0px #553d77;
-
             &:hover {
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
                 height: 586px;
-
                 .textBlock {
                     display: block;
                 }
@@ -572,7 +573,7 @@
         }
 
         .cardCon {
-            height: min-content;
+            height: auto;
 
             .card {
                 width: 198.12px;
@@ -645,6 +646,18 @@
                     font-size: 12px;
                 }
             }
+
+            .purple {
+                height: auto !important;
+                max-height: auto !important;
+                &:hover {
+                    transition: all 0.5s ease-in-out;
+                    max-height: 586px !important;
+                    .textBlock {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
@@ -658,8 +671,6 @@
     position: relative;
     overflow-x: hidden;
     padding-bottom: 130px;
-
-  
 
     .roadmapContainer {
         width: 1070px;
@@ -677,7 +688,7 @@
             .marker {
                 display: flex;
                 width: 25px;
-             
+
                 height: fit-content;
                 .glow {
                     transform: scale(2.25);
@@ -787,6 +798,7 @@
 
     .rm4 {
         height: 319px;
+        position: relative;
     }
 
     .float_greenfan {
@@ -827,9 +839,9 @@
     .float_shrimp {
         position: absolute;
         width: 339px;
-        bottom: 3%;
-        left: 2%;
         z-index: 100;
+        left: -15%;
+        bottom: -40%;
     }
 
     @media (max-width: 1260px) {
@@ -892,6 +904,8 @@
 
         .float_shrimp {
             width: 258.32px;
+            bottom: -30%;
+            left: -10%;
         }
     }
 
@@ -1002,13 +1016,13 @@
 
         .float_shrimp {
             width: 204.25px;
-            left: 50px;
+            bottom: -17%;
+            left: -15%;
         }
     }
 }
 
 .sec6 {
-    width: 100%;
     height: 566px;
     background: radial-gradient(60.59% 487.7% at 23.13% 27.47%, #818dc6 0%, #4b4ab9 96.7%);
     padding: 76px 179px;
@@ -1016,13 +1030,13 @@
     position: relative;
     overflow: hidden;
     h1 {
-        width: 475px;
         font-weight: 900;
         font-size: 100px;
         font-family: primary-font;
         color: #f4f1e9;
         margin-bottom: 55px;
         margin-top: 0;
+        width: fit-content;
 
         &::after {
             content: "";
@@ -1047,9 +1061,11 @@
     }
 
     .socialIcons {
+        z-index: 1000;
         img {
             height: 75px;
             margin: 0 15px;
+            cursor: pointer;
         }
     }
 
@@ -1059,7 +1075,7 @@
 
         h1 {
             font-size: 50.4334px;
-            width: 239.56px;
+            width: fit-content;
             margin-bottom: 25px;
             &::after {
                 margin-top: 20px;
@@ -1085,13 +1101,14 @@
 
         h1 {
             font-size: 50.4334px;
-            width: 239.56px;
-            margin: 0 auto;
-            margin-bottom: 25px;
+            width: fit-content;
+            margin: 0 auto !important;
+            margin-bottom: 25px !important;
             text-align: center;
             &::after {
                 margin-top: 20px;
-                margin-left: 5px;
+                background-color: #ffffff;
+                margin-left: 0 !important;
             }
         }
 
@@ -1101,8 +1118,7 @@
             img {
                 height: 42.06px;
             }
-            margin-left: -10px;
-            margin: 0 auto;
+            margin: 0 auto !important;
         }
 
         .float_allIcons {
@@ -1117,7 +1133,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 1199px;
+    min-height: 1199px;
     background: radial-gradient(44.26% 44.87% at 50% 58.78%, rgba(202, 133, 175, 0.5) 0%, rgba(57, 35, 91, 0.5) 100%),
         linear-gradient(180deg, #210e3e 0%, #351f67 100%);
     align-items: center;
@@ -1145,40 +1161,31 @@
         grid-template-rows: 1fr 1fr;
         overflow: hidden;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+        margin-bottom: 100px;
         span {
             display: flex;
             flex-direction: column;
             width: 210px;
             height: 288px;
             background: #f4f1e9;
-            margin: 20px 15px;
             border-radius: 16px;
-            position: relative;
-            cursor: pointer;
+            margin: 20px 15px;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 12px 0px;
+            box-sizing: border-box;
             img {
-                width: 190px;
-                object-fit: contain;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
+                width: 90.5%;
                 margin: 0 auto;
-                margin-top: 12px;
             }
-
+            h1,
+            p {
+                margin: 0;
+                font-size: 18px;
+            }
             h1 {
-                margin: 0 auto;
-                margin-top: auto;
                 font-size: 28px;
                 font-family: proxima;
-                margin-bottom: 8px;
-            }
-
-            p {
-                margin: 0 auto;
-                margin-bottom: 18px;
-                font-weight: 350;
             }
         }
     }
@@ -1194,24 +1201,23 @@
 
             span {
                 width: 142.07px;
-                height: 190.84px;
-                align-self: center;
-
-                h1 {
-                    font-size: 24px;
-                    width: 130.85px;
-                    text-align: center;
-                    margin-bottom: 3px;
-                    line-height: 20px;
-                }
-
-                p {
-                    font-size: 12.1774px;
-                    margin-bottom: 10px;
-                }
-
+                height: 200.84px;
+                padding: 5px 5px;
                 img {
-                    width: min(190px, 80%);
+                    width: 90.5%;
+                    margin: 0 auto;
+                }
+                h1,
+                p {
+                    margin: 0;
+                    font-weight: 400;
+                    font-size: 12.1818px;
+                }
+                h1 {
+                    font-family: proxima;
+                    font-size: 24px;
+                    text-align: center;
+                    line-height: 85%;
                 }
             }
         }

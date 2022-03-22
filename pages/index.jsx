@@ -44,8 +44,8 @@ const r2_images = importAll(require.context('./assets/icons/r2', false, /\.(png|
 //team icons
 const team = importAll(require.context('./assets/Team-Menkos', false, /\.(png|jpe?g|svg)$/));
 //team data 
-const teamdata = [['CORE', 'Product', 'https://twitter.com/metamenko'], ['CORE', 'Design', 'https://twitter.com/metamenko'], ['CORE', 'Community', 'https://twitter.com/metamenko'], ['NFT ARTIST', '@fatima', 'https://www.instagram.com/fatimas_pages/'], ['WEB DESIGN', '@afshin', 'www.instagram.com/afshinase/'],
-['DEV Team', '@Raj', 'https://mobile.twitter.com/rajkaria_'], ['GAME STUDIO', '@AliO', 'https://twitter.com/metamenko'], ['ANIMATION STUDIO', '@Taha', 'https://www.linkedin.com/in/taha-viceroy-0417a73b/?originalSubdomain=pk'], ['CREATIVE WRITER', 'Murad', 'http://www.muradaldin.com/'], ['CREATIVE WRITER', 'Boaz', 'http://boazdror.com/']]
+const teamdata = [['CORE', 'Product', 'https://twitter.com/metamenko'], ['CORE', 'Design', 'https://twitter.com/metamenko'], ['CORE', 'Community', 'https://twitter.com/metamenko'], ['NFT ARTIST', '@fatima', 'https://www.instagram.com/fatimas_pages/'], ['WEB DESIGN', '@afshin', 'https://www.instagram.com/afshinase/'],
+['DEV TEAM', '@Raj', 'https://mobile.twitter.com/rajkaria_'], ['GAME STUDIO', '@AliO', 'https://twitter.com/metamenko'], ['ANIMATION STUDIO', '@Taha', 'https://www.linkedin.com/in/taha-viceroy-0417a73b/?originalSubdomain=pk'], ['CREATIVE WRITER', 'Murad', 'http://www.muradaldin.com/'], ['CREATIVE WRITER', 'Boaz', 'http://boazdror.com/']]
 
 // Object.values(images)[0].default.src
 
@@ -271,7 +271,7 @@ function Home() {
         <img src={sushi.src} alt="" className={styles.float_sushi} />
         <img src={f12.src} alt="" className={styles.float_f12} />
         <img src={warrior.src} alt="" className={styles.float_warrior} />
-        <img src={shrimp.src} alt="" className={styles.float_shrimp} />
+
 
         <div></div>
         <div className={styles.titleCon}>
@@ -343,6 +343,7 @@ function Home() {
               <li>Animated series created by our Emmy-nominated cinematics and animation team</li>
               <li>MetaMenko Community Expansion<br />...and beyond!</li>
             </ul>
+            <img src={shrimp.src} alt="" className={styles.float_shrimp} />
           </div>
         </div>
       </section>
@@ -354,9 +355,19 @@ function Home() {
         }
 
         <span className={styles.socialIcons}>
-          <img src={mediumIcon.src} alt="" />
-          <img src={twitterIcon.src} alt="" />
-          <img src={discordIcon.src} alt="" />
+          <img onClick={() => {
+            openNewTab('https://metamenko.medium.com/');
+          }} src={mediumIcon.src} alt="" />
+          <img
+            onClick={() => {
+              openNewTab('https://discord.gg/metamenko');
+            }}
+            src={twitterIcon.src} alt="" />
+          <img
+            onClick={() => {
+              openNewTab('https://twitter.com/metamenko/');
+            }}
+            src={discordIcon.src} alt="" />
         </span>
       </section>
 
@@ -381,7 +392,7 @@ function Home() {
                 >
                   <img src={ele.default.src} alt="" />
                   <h1
-                    style={(teamdata[i][0].length < 12) ? { marginBottom: "13px" } : {}}
+                  // style={(teamdata[i][0].length < 12) ? { marginBottom: "13px" } : {}}
                   >{teamdata[i][0]}</h1>
                   <p>{teamdata[i][1]}</p>
                 </span>
@@ -432,7 +443,7 @@ function Home() {
 
           <li>
             <img onClick={() => {
-              openNewTab('https://discord.gg/WSRacjHc/');
+              openNewTab('https://discord.gg/metamenko');
             }}
               src={discord.src} alt="" />
           </li>
