@@ -71,6 +71,10 @@ a {
   src: url(/fonts/proxima-nova-extra-condensed-bold-latin-1.ttf);
 }
 
+button{
+  cursor: pointer;
+}
+
 /* @media (min-resolution: 1dppx) {
   body,
   html {
