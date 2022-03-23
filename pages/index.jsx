@@ -150,7 +150,9 @@ function Home() {
             <h3>Tear open a mystery pack</h3>
             <h3>AND enter the Menkoverse</h3>
             <p>A reimagined centuries-old game, MetaMenko combines strategy and chance to battle against Shadow Lords and free entrapped Menko spirits. Win battles to unlock secret vaults holding hidden, rare NFTs and other valuable treasures.</p>
-            <button>JOIN THE WHITELIST</button>
+            <button onClick={() => {
+              openNewTab('https://discord.gg/metamenko');
+            }} >JOIN THE WHITELIST</button>
           </div>
         </section>
 
@@ -168,7 +170,7 @@ function Home() {
             </div>
             <div className={styles.stat}>
               <p>MINT DATE</p>
-              <h1>TBD</h1>
+              <h1>MAY</h1>
               <h4>IN Q2 2022</h4>
             </div>
           </div>
@@ -247,9 +249,11 @@ function Home() {
               <div className={styles.underline}></div>
               {
                 <div className={styles.textBlock}>
-                  <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
-                  <p>First ever deck-building blockchain game</p>
-                  <p>Unlock secret vaults holding legendary NFTs</p>
+                  <p>Worlds imagined & crafted by select under-represented artists</p>
+                  <p>First ever mystery packs built on Solana</p>
+                  <p>Airdrops of upcoming MetaMenko worlds in pipeline</p>
+                  <p>Exclusive access to artist’s community & future projects</p>
+                  <p>Whitelisting & early access to partner alpha communities</p>
                 </div>
               }
             </div>
@@ -261,9 +265,10 @@ function Home() {
               <div className={styles.underline}></div>
               {
                 <div className={styles.textBlock}>
-                  <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
-                  <p>First ever deck-building blockchain game</p>
-                  <p>Unlock secret vaults holding legendary NFTs</p>
+                  <p>Exclusive access to MetaMenko Guild DAO</p>
+                  <p>Shape Menkoverse brand & direction</p>
+                  <p>Formalize passive income strategies</p>
+                  <p>Reap passive income from in-game play</p>
                 </div>
               }
             </div>
