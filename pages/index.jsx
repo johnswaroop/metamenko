@@ -170,8 +170,8 @@ function Home() {
             </div>
             <div className={styles.stat}>
               <p>MINT DATE</p>
-              <h1>MAY</h1>
-              <h4>IN Q2 2022</h4>
+              <h1>TBD</h1>
+              <h4>May 2022</h4>
             </div>
           </div>
 
@@ -235,7 +235,7 @@ function Home() {
               <div className={styles.underline}></div>
 
               <div className={styles.textBlock}>
-                <p>Exclusive alpha access to strategy-based game, MetaMenko</p>
+                <p>Exclusive early access to strategy-based game, MetaMenko</p>
                 <p>First ever deck-building blockchain game</p>
                 <p>Unlock secret vaults holding legendary NFTs</p>
               </div>
