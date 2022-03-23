@@ -45,8 +45,8 @@ const r2_images = importAll(require.context('./assets/icons/r2', false, /\.(png|
 //team icons
 const team = importAll(require.context('./assets/Team-Menkos', false, /\.(png|jpe?g|svg)$/));
 //team data 
-const teamdata = [['CORE', 'Product', 'https://twitter.com/metamenko'], ['CORE', 'Design', 'https://twitter.com/metamenko'], ['CORE', 'Community', 'https://twitter.com/metamenko'], ['NFT ARTIST', '@fatima', 'https://www.instagram.com/fatimas_pages/'], ['WEB DESIGN', '@afshin', 'https://www.instagram.com/afshinase/'],
-['DEV TEAM', '@Raj', 'https://mobile.twitter.com/rajkaria_'], ['GAME STUDIO', '@AliO', 'https://twitter.com/metamenko'], ['ANIMATION STUDIO', '@Taha', 'https://www.linkedin.com/in/taha-viceroy-0417a73b/?originalSubdomain=pk'], ['CREATIVE WRITER', 'Murad', 'http://www.muradaldin.com/'], ['CREATIVE WRITER', 'Boaz', 'http://boazdror.com/']]
+const teamdata = [['CORE', 'Product', 'https://twitter.com/metamenko'], ['CORE', 'Design', 'https://twitter.com/metamenko'], ['CORE', 'Community', 'https://twitter.com/metamenko'], ['NFT ARTIST', 'fatima', 'https://www.instagram.com/fatimas_pages/'], ['WEB DESIGN', 'afshin', 'https://www.instagram.com/afshinase/'],
+['DEV TEAM', 'Raj', 'https://mobile.twitter.com/rajkaria_'], ['GAME STUDIO', 'AliO', 'https://twitter.com/metamenko'], ['ANIMATION STUDIO', 'Taha', 'https://www.linkedin.com/in/taha-viceroy-0417a73b/?originalSubdomain=pk'], ['CREATIVE WRITER', 'Murad', 'http://www.muradaldin.com/'], ['CREATIVE WRITER', 'Boaz', 'http://boazdror.com/']]
 
 // Object.values(images)[0].default.src
 
